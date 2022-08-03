@@ -1,0 +1,176 @@
+{
+  "name": "electron-tailwind-react-native-webpack-babel-postcss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/electron.js",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron:start\"",
+    "start": "cross-env PORT=8080 webpack serve --mode=development --node-env development",
+    "test": "react-scripts test",
+    "eject": "echo \"Are you sure, there is no way back! [y/n]\"; read _answer && [[ \"${_answer}\" -eq \"y\" ]] && react-scripts eject || echo \"Aborted.\"",
+    "build": "webpack --mode=production --node-env production",
+    "build:dev": "webpack --mode=development --node-env development",
+    "build:prod": "webpack --mode=production --node-env production",
+    "build:react": "react-scripts build",
+    "build:electron": "electron-builder --dir",
+    "build:windows": "electron-builder --win",
+    "electron:start": "wait-on tcp:8080 && electron --trace-warnings .",
+    "eslint:start": "eslint --ext .js,.jsx,.ts,.tsx src --ignore-path .gitignore",
+    "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix --ignore-path .gitignore",
+    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore",
+    "format:start": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "7.17.9",
+    "@babel/eslint-parser": "^7.18.9",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "^7.18.6",
+    "@electron/remote": "^2.0.8",
+    "@vercel/node": "^2.5.2",
+    "autoprefixer": "10.4.4",
+    "babel-loader": "8.2.4",
+    "concurrently": "^7.3.0",
+    "core-js": "3.22.0",
+    "cross-env": "7.0.3",
+    "css-loader": "6.7.1",
+    "daisyui": "^2.20.0",
+    "electron": "19.0.10",
+    "electron-builder": "23.1.0",
+    "electron-is-dev": "2.0.0",
+    "eslint": "^8.20.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react-app": "^6.2.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "5.5.0",
+    "jest": "^28.1.3",
+    "node": "16.0.0",
+    "npm": "8.15.1",
+    "postcss": "8.4.12",
+    "postcss-html": "^1.5.0",
+    "postcss-import": "^14.1.0",
+    "postcss-loader": "6.2.1",
+    "prettier": "^2.7.1",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.69.3",
+    "react-native-web": "0.17.5",
+    "react-router-dom": "6.3.0",
+    "react-router-native": "6.3.0",
+    "react-scripts": "5.0.1",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-recommended-scss": "^7.0.0",
+    "stylelint-config-standard": "^26.0.0",
+    "tailwindcss": "3.1.6",
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.4",
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "wait-on": "6.0.1",
+    "webpack": "5.72.0",
+    "webpack-dev-server": "4.9.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "@babel/eslint-parser",
+    "root": true,
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "extends": [
+      "react-app",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": [
+      "react",
+      "jsx-a11y"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-module-boundary-types": 0,
+      "@typescript-eslint/no-explicit-any": 0,
+      "@typescript-eslint/no-unused-vars": [
+        0,
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_"
+        }
+      ],
+      "quote-props": [
+        0,
+        "as-needed"
+      ],
+      "no-unused-vars": [
+        0,
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_"
+        }
+      ]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "env": {
+          "browser": true,
+          "node": true
+        },
+        "parserOptions": {
+          "ecmaVersion": 2020,
+          "sourceType": "module",
+          "ecmaFeatures": {
+            "jsx": true
+          },
+          "warnOnUnsupportedTypeScriptVersion": true
+        },
+        "plugins": [
+          "typescript-eslint"
+        ],
+        "extends": [
+          "react-app",
+          "plugin:@typescript-eslint/recommended",
+          "plugin:react/recommended",
+          "plugin:jsx-a11y/recommended"
+        ]
+      }
+    ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
+}

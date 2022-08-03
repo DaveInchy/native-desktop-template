@@ -1,0 +1,60 @@
+{
+    "compilerOptions": {
+        "target": "ES2018",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "lib": [
+            "ESNext",
+            "ESNext.AsyncIterable",
+            "ESNext.Promise",
+            "ESNext.Array",
+            "ESNext.Intl",
+            "ESNext.Symbol",
+            "ESNext.BigInt",
+            "ESNext.String",
+            "DOM",
+            "ES5",
+            "ES6",
+            "ES7",
+            "ES2015",
+            "ES2016",
+            "ES2017",
+            "ES2018",
+            "ES2019",
+            "ES2020",
+            "ES2021",
+            "ES2022"
+        ],
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "allowJs": true,
+        "sourceMap": true,
+        "strict": true,
+        "noEmit": true,
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+          "@/*": [
+            "./src/*"
+          ],
+          "~/*": [
+            "./src/*"
+          ],
+          "./*": [
+            "./*"
+          ]
+        },
+        "types": [
+          "node",
+          "jest"
+        ]
+    },
+    "exclude": [
+        "node_modules_dev",
+        "node_modules_prod",
+        "node_modules",
+        ".vercel",
+        "dist"
+    ]
+}

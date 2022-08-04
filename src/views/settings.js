@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native-web';
 
-export default function Home() {
+export default function Settings() {
   return (
     <View styled style={
       {
@@ -10,7 +10,7 @@ export default function Home() {
         left: 0,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
         maxWidth: '100vw',
@@ -23,11 +23,7 @@ export default function Home() {
         zIndex: '-1000',
       }
     }>
-      <div className="h-[40vh] w-full flex flex-col justify-center items-center bg-accent">
-        <h2 className="text-4xl text-center mb-3 text-primary">desktop application</h2>
-        <hr/>
-        <h4 className="text-2xl text-center mt-3 text-secondary">build by:<br/><a href="http://github.com/daveinchy">DaveInchy on Github</a></h4>
-      </div>
+      Settings
     </View>
   )
 }

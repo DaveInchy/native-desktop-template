@@ -2,23 +2,28 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { View } from 'react-native-web';
 
-require('core-js/stable')
-require('regenerator-runtime/runtime')
-
 import './index.css';
 import Router from './router';
 
-ReactDOM.createRoot(document.getElementById('app')).render(
+require('core-js/stable')
+require('regenerator-runtime/runtime')
+
+ReactDOM.createRoot(
+  document.getElementById('app')
+).render(
   <React.StrictMode>
-    <View styled={true} style={
+    <View style={
       {
+        position: 'absolute',
+        left: 0,
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         height: '100vh',
         width: '100vw',
-        backgroundColor: '#fff',
-        overflow: 'hidden',
-        scroll: 'no',
+        maxWidth: '100vw',
+        backgroundColor: '#e3e3e3',
+        overflow: 'scroll-y',
+        scroll: 'off',
       }
     }>
       <Router />

@@ -1,10 +1,11 @@
 /* Custom Tailwind CSS configuration file.
  * 1.1.0 :: build-time: 2022-06-29T16:00:00.000Z
  * ----------------------------------------------- */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("fontawesome-free/css/all.css");
 
 :root {
   --min-font-size: 12px;
@@ -22,6 +23,15 @@
   --serif-font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
   --mono-font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
     monospace;
+}
+
+div {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.draggable {
+    -webkit-app-region: drag;
 }
 
 body {

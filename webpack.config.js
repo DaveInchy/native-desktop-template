@@ -9,11 +9,19 @@ const styleLoader = require('style-loader');
 const isProduction = process.env.NODE_ENV === 'production';
 
 const config  = {
-  entry: path.join(__dirname, 'src/', 'index.js'),
+  entry: {
+    index: path.resolve(__dirname, 'src/', 'index.js'),
+  },
   output: {
-    path: path.resolve('./dist'),
-    filename: 'index.js',
-    clean: true,
+    publicPath: "/",
+    path: path.resolve(__dirname, 'dist/'),
+    filename: 'bundle/[name].js',
+  },
+  devServer: {
+    hot: true,
+    liveReload: true,
+    static: path.resolve(__dirname, 'public/'),
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -58,6 +66,7 @@ const config  = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'file-loader',
@@ -68,11 +77,11 @@ const config  = {
             },
           },
         ],
-        exclude: /node_modules/,
         type: 'asset',
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|bmp|)$/i,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'file-loader',
@@ -83,17 +92,16 @@ const config  = {
             },
           },
         ],
-        exclude: /node_modules/,
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        exclude: /node_modules/,
         loader: 'file-loader',
         options: {
           presets: [
             '@babel/preset-env',
           ],
         },
-        exclude: /node_modules/,
       },
       {
         test: /\.(mp3|mp4|webm|ogg|wav|flac|aac|opus)(\?.*)?$/,

@@ -2,8 +2,6 @@
 require('core-js/stable');
 require("regenerator-runtime/runtime");
 
-require('@electron/remote/main').initialize();
-
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -15,18 +13,18 @@ function createWindow()
         width: 420,
         height: 840,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
+            // preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true
-      },
-      frame: true,
-      transparent: false,
-      resizable: false,
-      show: true,
+        },
+        frame: false,
+        transparent: false,
+        resizable: true,
+        show: true,
     });
 
-    Splash.loadURL('http://localhost:' + port);
+    Splash.loadURL(`http://localhost:${port}/`);
 }
 
 function closeApp()

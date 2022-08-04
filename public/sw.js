@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // THIS FILE SHOULD NOT BE VERSION CONTROLLED
 

@@ -4,8 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("fontawesome-free/css/all.css");
+@tailwind variants;
 
 :root {
   --min-font-size: 12px;
@@ -30,10 +29,6 @@ div {
   margin: 0 auto;
 }
 
-.draggable {
-    -webkit-app-region: drag;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -41,33 +36,4 @@ body {
   font-weight: var(--font-weight-regular);
   font-size: var(--default-font-size);
   line-height: var(--default-font-size);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--default-font-family);
-}
-
-p,
-span,
-a,
-li,
-button {
-  font-family: var(--mono-font-family);
-  font-weight: var(--font-weight-regular);
-}
-
-code,
-input,
-textarea,
-select,
-option,
-pre {
-  font-family: var(--mono-font-family);
-  font-weight: var(--font-weight-light);
 }

@@ -1,4 +1,4 @@
-/* Custom Typographic CSS configurations  */
+/* Components for React */
 
 :root {
   --min-font-size: 12px;
@@ -18,31 +18,10 @@
     monospace;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--default-font-family);
+.draggable {
+    -webkit-app-region: drag;
 }
-
-p,
-span,
-a,
-li,
-button {
-  font-family: var(--mono-font-family);
-  font-weight: var(--font-weight-regular);
-}
-
-code,
-input,
-textarea,
-select,
-option,
-pre {
-  font-family: var(--mono-font-family);
-  font-weight: var(--font-weight-light);
+.draggable:hover {
+    -webkit-app-region: drag;
+    cursor: move;
 }

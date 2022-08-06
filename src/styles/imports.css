@@ -2,4 +2,22 @@
 @import url('tailwindcss/base');
 @import url('tailwindcss/components');
 @import url('tailwindcss/utilities');
-@import url("fontawesome-free/css/all.css");
+@import url('tailwindcss/variants');
+
+:root {
+  --min-font-size: 12px;
+  --max-font-size: 96px;
+  --default-font-size: 1rem;
+  --heading-font-size: 1.25rem;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extra: 900;
+  --default-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica, sans-serif;
+  --serif-font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --mono-font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    monospace;
+}

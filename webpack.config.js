@@ -15,7 +15,7 @@ const config  = {
   output: {
     publicPath: "/",
     path: path.resolve(__dirname, 'dist/'),
-    filename: 'bundle/[name].js',
+    filename: 'index.js',
   },
   devServer: {
     hot: true,

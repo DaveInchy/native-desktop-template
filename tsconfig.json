@@ -54,7 +54,10 @@
         "node_modules_dev",
         "node_modules_prod",
         "node_modules",
-        ".vercel",
-        "dist"
+        "dist",
+        "public",
+        "release",
+        "build",
+        "tsconfig.json",
     ]
 }

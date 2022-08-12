@@ -1,5 +1,5 @@
 
-# >_ npm run dev
+# >_ native-desktop-template
 
 This is a template for a native app, it uses electron for desktop functionality and uses webpack + create-react-app to handle compiling to Android & iOS. It is intended to be used with a [create-react-app]('https://github.com/DaveInchy/tailwind-app') example project... Make sure to export your original "create react app template" into the `src/` folder and copy every static file to the `public/` folder.
 
@@ -7,25 +7,15 @@ This is a template for a native app, it uses electron for desktop functionality 
 
 <br>
 
-# >_ npm install
-### - Setup by Webpack & Babel
-### - Design by TailwindCSS
-### - Desktop by Electron
-### - Mobile by React Native
-
-<br>
+# >_ Installing
+To install the whole source code, run the following command:
 
 ```
-Multi-platform Application Development Template
+$ npm run setup
 ```
-
-never say never, one day itll work itself out, thats what life does, figure shit out --wtfdave
-
 <br>
 
-<br>
-
-# >_ NPM scripts
+# >_ Running
 
 
 ```
@@ -48,3 +38,12 @@ $ npm run format:start
 Are you sure to continue? [y/n] |
 >_ maybe?                       |
 ```
+
+<br>
+
+# >_ Configuration
+
+- Setup by Webpack & Babel -> `webpack.config.js`
+- Design by TailwindCSS -> `tailwind.config.js`
+- Desktop by Electron -> `public/electron.js`
+- Mobile by React Native -> `src/index.js`

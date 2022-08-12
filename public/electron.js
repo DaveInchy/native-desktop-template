@@ -10,10 +10,10 @@ const port = process.env.PORT || 8080;
 function createWindow()
 {
     const Splash = new BrowserWindow({
-        width: 420,
+        width: 720,
         height: 840,
         webPreferences: {
-            // preload: path.join(__dirname, 'preload.js'),
+            preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true,

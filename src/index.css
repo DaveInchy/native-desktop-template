@@ -38,7 +38,7 @@ body {
   line-height: var(--default-font-size);
 }
 
-.appContainer {
+/* .appContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +46,4 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: scroll-y;
-}
+} */

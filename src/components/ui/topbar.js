@@ -24,29 +24,30 @@ export default function TopBar() {
       }
     }>
       <div className="max-w-full w-full h-full flex flex-row justify-center items-center bg-base-100">
-        <div className="w-[25%] flex flex-col justify-center items-start">
-          <Link to={'/'} className="btn btn-primary btn-sm btn-block rounded-md p-0 m-0"><span className="text-transparent/20 text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono">Back</span></Link>
+        <div className="w-[25%] inline float-left">
+          <Link to={'/'}
+          className="btn btn-primary btn-sm w-[90%] mx-[3%] rounded-md p-0 m-0"><span className="text-transparent/20 text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono">Back</span></Link>
         </div>
         <div className="w-[50%] flex flex-col justify-center items-center draggable">
           <h1 className="text-accent font-geometos-rounded text-2xl">Desktop</h1>
         </div>
-        <div className="w-[25%] inline float-right justify-center items-end">
+        <div className="w-[25%] inline float-right">
           <button onClick={
             () => {
               window.location.href = '/settings';
             }
-          } className="inline-block btn btn-primary btn-sm w-[30%] mx-[1.5%] rounded-md p-0 m-0"><span className="text-transparent text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono">🔎</span></button>
+          } className="inline-block btn btn-primary btn-sm w-[30%] rounded-md p-0 m-0"><span className="text-transparent text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono">🔎</span></button>
           <button onClick={
             () => {
               // minimize the window electron main.js
               window.Windows[0].minimize();
             }
-          } className="inline-block btn btn-primary btn-sm w-[30%] mx-[1.5%] rounded-md p-0 m-0"><span className="text-transparent text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono"><i className="fas fa-tesla" /></span></button>
+          } className="inline-block btn btn-primary btn-sm w-[30%] mx-[3%] rounded-md p-0 m-0"><span className="text-transparent text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono"><i className="fas fa-tesla" /></span></button>
           <button onClick={
             () => window.confirm("Close the application?")
               ? window.close()
               : window.alert(JSON.stringify(window.Windows))
-          } className="inline-block btn btn-accent btn-sm w-[30%] mx-[1.5%] rounded-md p-0 m-0"><span className="text-transparent text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono">✖️</span></button>
+          } className="inline-block btn btn-accent btn-sm w-[30%] rounded-md p-0 m-0"><span className="text-transparent text-[#fff] bg-clip-text font-black bg-slate-100 font-noto-mono">✖️</span></button>
         </div>
       </div>
     </View>

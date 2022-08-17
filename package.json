@@ -1,6 +1,6 @@
 {
   "name": "electron-tailwind-react-native-webpack-babel-postcss",
-  "version": "0.1.2-stable.1",
+  "version": "1.0.1-stable",
   "description": "",
   "main": "public/electron.js",
   "private": true,

@@ -4,28 +4,30 @@ require("regenerator-runtime/runtime");
 
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const Config = require('./../native.config').default;
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || Config.devSettings.middleware.port;
+const host = process.env.HOST || Config.devSettings.middleware.host;
 
 function createWindow()
 {
     const Splash = new BrowserWindow({
-        width: 720,
-        height: 840,
+        width: Config.windowSettings.width,
+        height: Config.windowSettings.height,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'),
-            nodeIntegration: true,
-            contextIsolation: false,
-            enableRemoteModule: true,
-            openDevTools: true,
+            preload: Config.windowSettings.webPreferences.preload ? path.join(__dirname, 'preload.js') : null,
+            nodeIntegration: Config.windowSettings.webPreferences.nodeIntegration,
+            contextIsolation: Config.windowSettings.webPreferences.contextIsolation,
+            enableRemoteModule: Config.windowSettings.webPreferences.enableRemoteModule,
+            openDevTools: Config.windowSettings.webPreferences.openDevTools,
         },
-        frame: false,
-        transparent: false,
-        resizable: true,
-        show: true,
+        frame: Config.windowSettings.frame,
+        transparent: Config.windowSettings.transparent,
+        resizable: Config.windowSettings.resizable,
+        show: Config.windowSettings.show,
     });
 
-    Splash.loadURL(`http://localhost:${port}/`);
+    Splash.loadURL(`http://${host}:${port}/`);
 }
 
 function closeApp()

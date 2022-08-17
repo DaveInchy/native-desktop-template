@@ -46,8 +46,7 @@
           ]
         },
         "types": [
-          "node",
-          "jest"
+          "node"
         ]
     },
     "exclude": [

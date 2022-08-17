@@ -2,7 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { View } from 'react-native-web';
 
+// Stylesheets
 import './index.css';
+import './styles/imports.css';
+import './styles/components.css';
+import './styles/typography.css';
+import './styles/buttons.css';
+
 import Router from './router';
 
 require('core-js/stable')
@@ -21,9 +27,6 @@ ReactDOM.createRoot(
         height: '100vh',
         width: '100vw',
         maxWidth: '100vw',
-        backgroundColor: '#e3e3e3',
-        overflow: 'scroll-y',
-        scroll: 'off',
       }
     }>
       <Router />

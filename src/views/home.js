@@ -16,8 +16,6 @@ export default function Home() {
         maxWidth: '100vw',
         minHeight: '100vh',
         height: '100vh',
-        backgroundColor: '#3f3f3f',
-        color: '#e3e3e3',
         overflow: 'hidden',
         scroll: 'no',
         zIndex: '-1000',

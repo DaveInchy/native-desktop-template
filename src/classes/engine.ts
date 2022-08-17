@@ -13,33 +13,6 @@ export namespace Engine {
   export class Utils {
     static validateObject: (data: any) => {} = (data: any) => new Object(data) || new Object(JSON.parse(data));
     static validateList: (data: any) => {}[] = (data: any) => new Array(data) || new Array(JSON.parse(data));
-    static startEngine(): IEngine {
-      return {
-        State: new Engine.State([
-          {
-            match: false,
-            key: 'mode',
-            value: 'production',
-          },
-          {
-            match: false,
-            key: 'env',
-            value: 'development',
-          },
-          {
-            match: false,
-            key: 'host',
-            value: '0.0.0.0',
-          },
-          {
-            match: false,
-            key: 'port',
-            value: 8080,
-          }
-        ], {}),
-        Utils: new Engine.Utils(),
-      };
-    }
   }
   export class State {
     public constructor(
@@ -72,10 +45,3 @@ export namespace Engine {
     }
   }
 }
-
-
-function unset(arg0: any) {
-  // unset a var
-  return arg0 = null;
-}
-
